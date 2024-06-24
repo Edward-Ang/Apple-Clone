@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ProductCard from '../components/ProductCard';
 import data from '../assets/data.json';
-import grey from '../assets/grey.png';
-import m3 from '../assets/m3.png';
+import macbbok14inch from '../assets/macbook14inch.png';
+import usbc from '../assets/usbc.png';
+import adapter from '../assets/adapter.png';
 
 const ProductSelection: React.FC = () => {
     return (
@@ -42,65 +44,33 @@ const ProductSelection: React.FC = () => {
                             <button className='bg-gray-200 px-5 py-1 mx-3 rounded-3xl'>M3 Max</button>
                         </div>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-5 px-10">
                         {data.products.map((product) => (
-                            <Link key={product.id} to={`/product/${product.id}`} className="w-auto bg-gray-100 border px-4 pb-5" style={{ width: '313px', borderRadius: '18px' }}>
-                                <img src={grey} alt={product.title} className="w-full h-64 object-cover" style={{ width: '280px' }} />
-                                <span className='text-xs'>{product.color}</span>
-                                <ul className="flex space-x-4 pt-2">
-                                    <li className="flex items-center">
-                                        <input
-                                            type="radio"
-                                            id="color-space-gray"
-                                            name="color"
-                                            value="space_gray"
-                                            className="hidden peer"
-                                            checked
-                                        />
-                                        <label
-                                            htmlFor="color-space-gray"
-                                            className="cursor-pointer flex flex-col items-center"
-                                        >
-                                            <img
-                                                width="32"
-                                                height="32"
-                                                alt="Space Gray"
-                                                src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp-14-spacegray-cto-hero-202310_SW_COLOR?wid=64&amp;hei=64&amp;fmt=jpeg&amp;qlt=90&amp;.v=1697913361217"
-                                                className="rounded-full border-2 border-transparent peer-checked:border-blue-500"
-                                            />
-                                        </label>
-                                    </li>
-                                    <li className="flex items-center">
-                                        <input
-                                            type="radio"
-                                            id="color-silver"
-                                            name="color"
-                                            value="silver"
-                                            className="hidden peer"
-                                        />
-                                        <label
-                                            htmlFor="color-silver"
-                                            className="cursor-pointer flex flex-col items-center"
-                                        >
-                                            <img
-                                                width="32"
-                                                height="32"
-                                                alt="Silver"
-                                                src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp-14-silver-cto-hero-202310_SW_COLOR?wid=64&amp;hei=64&amp;fmt=jpeg&amp;qlt=90&amp;.v=1697913361277"
-                                                className="rounded-full border-2 border-transparent peer-checked:border-blue-500"
-                                            />
-                                        </label>
-                                    </li>
-                                </ul>
-                                <div className='h-auto pt-1'>
-                                    <div className='pb-2.5'>
-                                        <img src={m3} alt='m3' style={{ width: '50px', height: '50px' }} />
-                                    </div>
-                                </div>
-                                <p className="text-gray-500">{product.color}</p>
-                                <p className="text-lg font-bold mt-2">${product.price}</p>
-                            </Link>
+                            <ProductCard key={product.id} product={product} />
                         ))}
+                    </div>
+                    <div className='pt-16 pb-10 flex justify-center items-center font-semibold' style={{ fontSize: '40px' }}>
+                        What's in the Box
+                    </div>
+                    <div className='flex w-full pb-11'>
+                        <div className='flex flex-col justify-center items-center'>
+                            <div>
+                                <img width={568} height={392} src={macbbok14inch} alt='14inch' />
+                            </div>
+                            <span className='pt-5 pb-12 px-4 text-sm'>14-inch MacBook Pro</span>
+                        </div>
+                        <div className='flex flex-col justify-center items-center'>
+                            <div className='px-16'>
+                                <img width={45} height={392} src={usbc} alt='cable' />
+                            </div>
+                            <span className='pt-5 pb-12 px-4 text-sm'>USB-C to MagSafe 3 Cable (2m)</span>
+                        </div>
+                        <div className='flex flex-col justify-center items-center'>
+                            <div>
+                                <img width={242} height={392} src={adapter} alt='adapter' />
+                            </div>
+                            <span className='pt-5 pb-12 px-4 text-sm'>USB-C Power Adapter</span>
+                        </div>
                     </div>
                 </div>
             </div>

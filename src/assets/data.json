@@ -5,7 +5,9 @@
             "category": "14-inch",
             "title": "MacBook Pro, Space Grey, 512GB Storage",
             "color": "Space Grey",
-            "processor": "Apple M3 chip 8-core CPU, 10-core GPU",
+            "chip": "M3",
+            "processor1": "8-core CPU",
+            "processor2": "10-core GPU",
             "memory": "8GB Unified Memory",
             "storage": "512GB SSD Storage",
             "display": "14-inch Liquid Retina XDR display",
@@ -14,14 +16,16 @@
             "trackpad": "Force Touch trackpad",
             "adapter": "70W USB-C Power Adapter",
             "price": "RM 7,499.00",
-            "installment": "RM 312.46/mo. per month for 24 months"
+            "installment": "RM 312.46/mo. for 24 mo.*"
         },
         {
             "id": 2,
             "category": "14-inch",
             "title": "MacBook Pro, Space Grey, 1TB Storage",
             "color": "Space Grey",
-            "processor": "Apple M3 chip 8-core CPU, 10-core GPU",
+            "chip": "M3",
+            "processor1": "8-core CPU",
+            "processor2": "10-core GPU",
             "memory": "8GB Unified Memory",
             "storage": "1TB SSD Storage",
             "display": "14-inch Liquid Retina XDR display",
@@ -30,14 +34,16 @@
             "trackpad": "Force Touch trackpad",
             "adapter": "70W USB-C Power Adapter",
             "price": "RM 8,299.00",
-            "installment": "RM 345.79/mo. per month for 24 months"
+            "installment": "RM 345.79/mo. for 24 mo.*"
         },
         {
             "id": 3,
             "category": "14-inch",
             "title": "MacBook Pro, Space Grey, 16GB Memory, 1TB Storage",
             "color": "Space Grey",
-            "processor": "Apple M3 chip 8-core CPU, 10-core GPU",
+            "chip": "M3",
+            "processor1": "8-core CPU",
+            "processor2": "10-core GPU",
             "memory": "16GB Unified Memory",
             "storage": "1TB SSD Storage",
             "display": "14-inch Liquid Retina XDR display",
@@ -46,14 +52,16 @@
             "trackpad": "Force Touch trackpad",
             "adapter": "70W USB-C Power Adapter",
             "price": "RM 9,099.00",
-            "installment": "RM 379.13/mo. per month for 24 months"
+            "installment": "RM 379.13/mo. for 24 mo.*"
         },
         {
             "id": 4,
             "category": "14-inch",
             "title": "MacBook Pro, Space Black, 512GB Storage",
             "color": "Space Black",
-            "processor": "Apple M3 Pro chip 11-core CPU, 14-core GPU",
+            "chip": "M3 Pro",
+            "processor1": "11-core CPU",
+            "processor2": "14-core GPU",
             "memory": "18GB Unified Memory",
             "storage": "512GB SSD Storage",
             "display": "14-inch Liquid Retina XDR display",
@@ -62,14 +70,16 @@
             "trackpad": "Force Touch trackpad",
             "adapter": "70W USB-C Power Adapter",
             "price": "RM 9,999.00",
-            "installment": "RM 416.63/mo. per month for 24 months"
+            "installment": "RM 416.63/mo. for 24 mo.*"
         },
         {
             "id": 5,
             "category": "14-inch",
             "title": "MacBook Pro, Space Black, 1TB Storage",
             "color": "Space Black",
-            "processor": "Apple M3 Pro chip 12-core CPU, 18-core GPU",
+            "chip": "M3 Pro",
+            "processor1": "12-core CPU",
+            "processor2": "18-core GPU",
             "memory": "18GB Unified Memory",
             "storage": "1TB SSD Storage",
             "display": "14-inch Liquid Retina XDR display",
@@ -78,14 +88,16 @@
             "trackpad": "Force Touch trackpad",
             "adapter": "96W USB-C Power Adapter",
             "price": "RM 11,599.00",
-            "installment": "RM 483.29/mo. per month for 24 months"
+            "installment": "RM 483.29/mo. for 24 mo.*"
         },
         {
             "id": 6,
             "category": "14-inch",
             "title": "MacBook Pro, Space Black, 36GB Memory, 1TB Storage",
             "color": "Space Black",
-            "processor": "Apple M3 Max chip 14-core CPU, 30-core GPU",
+            "chip": "M3 Max",
+            "processor1": "14-core CPU",
+            "processor2": "30-core GPU",
             "memory": "36GB Unified Memory",
             "storage": "1TB SSD Storage",
             "display": "14-inch Liquid Retina XDR display",
@@ -94,7 +106,7 @@
             "trackpad": "Force Touch trackpad",
             "adapter": "96W USB-C Power Adapter",
             "price": "RM 14,799.00",
-            "installment": "RM 616.63/mo. per month for 24 months"
+            "installment": "RM 616.63/mo. for 24 mo.*"
         }
     ]
 }
