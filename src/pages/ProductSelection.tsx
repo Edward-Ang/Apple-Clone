@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import data from '../assets/data.json';
-import imageSrc from '../assets/';
+import grey from '../assets/grey.png';
+import m3 from '../assets/m3.png';
 
 const ProductSelection: React.FC = () => {
     return (
@@ -23,10 +24,10 @@ const ProductSelection: React.FC = () => {
                         </Link>
                     </div>
                     <div className='flex justify-center items-center py-5'>
-                        <button className='w-auto font-semibold py-6 px-4 rounded-tl-lg rounded-bl-lg border border-black' style={{maxWidth: '274px', minWidth: '141px'}}>
+                        <button className='w-auto font-semibold py-6 px-4 rounded-tl-lg rounded-bl-lg border border-black' style={{ maxWidth: '274px', minWidth: '141px' }}>
                             14-inch
                         </button>
-                        <button className='w-auto font-semibold py-6 px-4 rounded-tr-lg rounded-br-lg border border-black' style={{maxWidth: '274px', minWidth: '141px'}}>
+                        <button className='w-auto font-semibold py-6 px-4 rounded-tr-lg rounded-br-lg border border-black' style={{ maxWidth: '274px', minWidth: '141px' }}>
                             16-inch
                         </button>
                     </div>
@@ -43,9 +44,59 @@ const ProductSelection: React.FC = () => {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         {data.products.map((product) => (
-                            <Link key={product.id} to={`/product/${product.id}`} className=" bg-gray-200 border p-4 rounded-md">
-                                <img src={imageSrc} alt={product.title} className="w-full h-64 object-cover mb-4" />
-                                <h2 className="text-xl font-semibold">{product.title}</h2>
+                            <Link key={product.id} to={`/product/${product.id}`} className="w-auto bg-gray-100 border px-4 pb-5" style={{ width: '313px', borderRadius: '18px' }}>
+                                <img src={grey} alt={product.title} className="w-full h-64 object-cover" style={{ width: '280px' }} />
+                                <span className='text-xs'>{product.color}</span>
+                                <ul className="flex space-x-4 pt-2">
+                                    <li className="flex items-center">
+                                        <input
+                                            type="radio"
+                                            id="color-space-gray"
+                                            name="color"
+                                            value="space_gray"
+                                            className="hidden peer"
+                                            checked
+                                        />
+                                        <label
+                                            htmlFor="color-space-gray"
+                                            className="cursor-pointer flex flex-col items-center"
+                                        >
+                                            <img
+                                                width="32"
+                                                height="32"
+                                                alt="Space Gray"
+                                                src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp-14-spacegray-cto-hero-202310_SW_COLOR?wid=64&amp;hei=64&amp;fmt=jpeg&amp;qlt=90&amp;.v=1697913361217"
+                                                className="rounded-full border-2 border-transparent peer-checked:border-blue-500"
+                                            />
+                                        </label>
+                                    </li>
+                                    <li className="flex items-center">
+                                        <input
+                                            type="radio"
+                                            id="color-silver"
+                                            name="color"
+                                            value="silver"
+                                            className="hidden peer"
+                                        />
+                                        <label
+                                            htmlFor="color-silver"
+                                            className="cursor-pointer flex flex-col items-center"
+                                        >
+                                            <img
+                                                width="32"
+                                                height="32"
+                                                alt="Silver"
+                                                src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp-14-silver-cto-hero-202310_SW_COLOR?wid=64&amp;hei=64&amp;fmt=jpeg&amp;qlt=90&amp;.v=1697913361277"
+                                                className="rounded-full border-2 border-transparent peer-checked:border-blue-500"
+                                            />
+                                        </label>
+                                    </li>
+                                </ul>
+                                <div className='h-auto pt-1'>
+                                    <div className='pb-2.5'>
+                                        <img src={m3} alt='m3' style={{ width: '50px', height: '50px' }} />
+                                    </div>
+                                </div>
                                 <p className="text-gray-500">{product.color}</p>
                                 <p className="text-lg font-bold mt-2">${product.price}</p>
                             </Link>
