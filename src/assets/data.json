@@ -1,0 +1,56 @@
+{
+    "products": [
+      {
+        "id": "1",
+        "name": "Apple MacBook Pro 14-inch",
+        "description": "Space Black, Apple M3 Max with 14-core CPU and 30-core GPU, 36GB Memory, 1TB Storage",
+        "price": 3499,
+        "image": "https://www.apple.com/v/macbook-pro-14-and-16/b/images/overview/hero_endframe__ea0qze85eyi6_large.jpg",
+        "details": {
+          "processor": "Apple M3 Max",
+          "cpu": "14-core",
+          "gpu": "30-core",
+          "memory": "36GB",
+          "storage": "1TB",
+          "display": "14.2-inch (diagonal) mini-LED backlit display with True Tone",
+          "battery": "Up to 21 hours Apple TV app movie playback",
+          "weight": "3.5 pounds (1.6 kg)",
+          "other_features": [
+            "Magic Keyboard",
+            "Touch ID",
+            "Force Touch trackpad",
+            "Three Thunderbolt 4 ports",
+            "HDMI port",
+            "SDXC card slot",
+            "MagSafe 3 port"
+          ]
+        }
+      },
+      {
+        "id": "2",
+        "name": "Apple MacBook Pro 16-inch",
+        "description": "Space Black, Apple M3 Max with 16-core CPU and 38-core GPU, 64GB Memory, 2TB Storage",
+        "price": 4999,
+        "image": "https://www.apple.com/v/macbook-pro-14-and-16/b/images/overview/hero_endframe__ea0qze85eyi6_large.jpg",
+        "details": {
+          "processor": "Apple M3 Max",
+          "cpu": "16-core",
+          "gpu": "38-core",
+          "memory": "64GB",
+          "storage": "2TB",
+          "display": "16.2-inch (diagonal) mini-LED backlit display with True Tone",
+          "battery": "Up to 21 hours Apple TV app movie playback",
+          "weight": "4.7 pounds (2.1 kg)",
+          "other_features": [
+            "Magic Keyboard",
+            "Touch ID",
+            "Force Touch trackpad",
+            "Three Thunderbolt 4 ports",
+            "HDMI port",
+            "SDXC card slot",
+            "MagSafe 3 port"
+          ]
+        }
+      }
+    ]
+  }  
