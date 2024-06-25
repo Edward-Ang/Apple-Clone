@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import ProductConfigure from './ProductConfigure';
@@ -14,14 +14,32 @@ import '../App.css';
 const ProductSelection: React.FC = () => {
     const selectedInch = useStore(state => state.selectedInch);
     const setSelectedInch = useStore(state => state.setSelectedInch);
-    const filteredProducts = data.products.filter(product => product.category === selectedInch);
+    const [activeFilter, setActiveFilter] = useState('All');
+    const [filteredProducts, setFilteredProducts] = useState(data.products.filter(product => product.category === selectedInch));
 
     const handle14InchClick = () => {
         setSelectedInch(14);
+        setActiveFilter("All");
+        const filtered = data.products.filter((product) => product.category === 14);
+        setFilteredProducts(filtered);
     };
 
     const handle16InchClick = () => {
         setSelectedInch(16);
+        setActiveFilter("All");
+        const filtered = data.products.filter((product) => product.category === 16);
+        setFilteredProducts(filtered);
+    };
+
+    const handleFilterClick = (filterType: string) => {
+        setActiveFilter(filterType);
+        if (filterType !== "All") {
+            const filtered = data.products.filter(product => product.category === selectedInch && product.chip === filterType);
+            setFilteredProducts(filtered);
+        } else {
+            const filtered = data.products.filter((product) => product.category === selectedInch);
+            setFilteredProducts(filtered);
+        }
     };
 
     return (
@@ -45,7 +63,7 @@ const ProductSelection: React.FC = () => {
                     <div className='flex justify-center items-center py-5' style={{ position: 'sticky', top: 0, zIndex: 1, backgroundColor: 'white' }}>
                         <button
                             className={`w-auto font-semibold py-5 px-4 rounded-tl-lg rounded-bl-lg border ${selectedInch === 14 ? 'border-blue-500 border-2' : 'border-black'}`}
-                            style={{ maxWidth: '274px', minWidth: '141px',  minHeight: '83px', fontSize: '17px' }}
+                            style={{ maxWidth: '274px', minWidth: '141px', minHeight: '83px', fontSize: '17px' }}
                             onClick={handle14InchClick}
                         >
                             <label>14-inch</label>
@@ -63,10 +81,27 @@ const ProductSelection: React.FC = () => {
                             Filter by chip:
                         </div>
                         <div className='flex justify-between items-center pt-8 pb-16'>
-                            <button className='bg-gray-200 px-5 py-1 mx-3 rounded-3xl'>All</button>
-                            <button className='bg-gray-200 px-5 py-1 mx-3 rounded-3xl'>M3</button>
-                            <button className='bg-gray-200 px-5 py-1 mx-3 rounded-3xl'>M3 Pro</button>
-                            <button className='bg-gray-200 px-5 py-1 mx-3 rounded-3xl'>M3 Max</button>
+                            <button
+                                className={`px-5 py-1 mx-3 rounded-3xl ${activeFilter === 'All' ? 'bg-black text-white' : 'bg-gray-200'}`}
+                                onClick={() => handleFilterClick("All")}>All
+                            </button>
+                           {selectedInch !== 16 ? (
+                            <button
+                                className={`px-5 py-1 mx-3 rounded-3xl ${activeFilter === 'M3' ? 'bg-black text-white' : 'bg-gray-200'}`}
+                                onClick={() => handleFilterClick("M3")}>M3
+                            </button>
+                           ) : (
+                            <>
+                            </>
+                           )}
+                            <button
+                                className={`px-5 py-1 mx-3 rounded-3xl ${activeFilter === 'M3 Pro' ? 'bg-black text-white' : 'bg-gray-200'}`}
+                                onClick={() => handleFilterClick("M3 Pro")}>M3 Pro
+                            </button>
+                            <button
+                                className={`px-5 py-1 mx-3 rounded-3xl ${activeFilter === 'M3 Max' ? 'bg-black text-white' : 'bg-gray-200'}`}
+                                onClick={() => handleFilterClick("M3 Max")}>M3 Max
+                            </button>
                         </div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-5 px-10">

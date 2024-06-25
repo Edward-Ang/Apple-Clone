@@ -32,7 +32,10 @@ interface ProductCardProps {
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
-    const [selectedImage, setSelectedImage] = useState(grey14);
+    const [selectedImage, setSelectedImage] = useState(() => {
+        return product.category === 16 ? black16 : grey14;
+    });
+    const [selectedColor, setSelectedColor] = useState("Space Grey");
     const navigate = useNavigate();
 
     const handleSelect = (id: string | number) => {
@@ -43,50 +46,57 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         <>
             <div className="w-auto bg-gray-100 border px-4 pb-5" style={{ width: '303px', borderRadius: '18px' }}>
                 <img src={selectedImage} alt={product.title} className="w-full h-64 object-cover" style={{ width: '280px' }} />
-                <span className='text-xs'>{product.color}</span>
+                <span className='text-xs'>{selectedColor}</span>
                 <ul className="flex space-x-4 pt-2">
                     <li className="flex items-center">
                         <input
                             type="radio"
-                            name="color"
-                            id={product.id.toString()}
-                            value="space_gray"
-                            onClick={() => setSelectedImage(grey14)}
+                            name={`color-${product.id}`}
+                            id={`Space Grey-${product.id}`}
+                            value="Space Grey"
+                            onChange={() => {
+                                setSelectedImage(product.category === 16 ? black16 : grey14);
+                                setSelectedColor("Space Grey");
+                            }}
                             className="hidden peer"
-                            checked
+                            checked={selectedColor === "Space Grey"}
                         />
                         <label
-                            htmlFor={product.id.toString()}
-                            className="cursor-pointer flex flex-col items-center"
+                            htmlFor={`Space Grey-${product.id}`}
+                            className="cursor-pointer flex flex-col items-center peer-checked:border-blue-500 peer-checked:border-2 rounded-full"
                         >
                             <img
                                 width="32"
                                 height="32"
-                                alt="Space Gray"
+                                alt="Space Grey"
                                 src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp-14-spacegray-cto-hero-202310_SW_COLOR?wid=64&amp;hei=64&amp;fmt=jpeg&amp;qlt=90&amp;.v=1697913361217"
-                                className="rounded-full border-2 border-transparent peer-checked:border-blue-500"
+                                className="rounded-full border-2 border-transparent"
                             />
                         </label>
                     </li>
                     <li className="flex items-center">
                         <input
                             type="radio"
-                            name="color"
-                            id={product.id.toString()}
-                            value="silver"
+                            name={`color-${product.id}`}
+                            id={`Silver-${product.id}`}
+                            value="Silver"
+                            onChange={() => {
+                                setSelectedImage(product.category === 16 ? sliver16 : sliver14);
+                                setSelectedColor("Silver");
+                            }}
                             className="hidden peer"
-                            onClick={() => setSelectedImage(sliver14)}
+                            checked={selectedColor === "Silver"}
                         />
                         <label
-                            htmlFor={product.id.toString()}
-                            className="cursor-pointer flex flex-col items-center"
+                            htmlFor={`Silver-${product.id}`}
+                            className="cursor-pointer flex flex-col items-center peer-checked:border-blue-500 peer-checked:border-2 rounded-full"
                         >
                             <img
                                 width="32"
                                 height="32"
                                 alt="Silver"
                                 src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp-14-silver-cto-hero-202310_SW_COLOR?wid=64&amp;hei=64&amp;fmt=jpeg&amp;qlt=90&amp;.v=1697913361277"
-                                className="rounded-full border-2 border-transparent peer-checked:border-blue-500"
+                                className="rounded-full border-2 border-transparent"
                             />
                         </label>
                     </li>
@@ -167,7 +177,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                 </div>
             </div>
         </>
-    );
+    )
 }
 
 export default ProductCard;
