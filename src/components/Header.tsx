@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../App.css';
 
 const Header: React.FC = () => {
     return (
@@ -37,7 +38,7 @@ const Header: React.FC = () => {
             </header>
             <div className="bg-white-800 text-black p-4 h-14 flex justify-center items-center border-b border-gray-300">
                 <div className='flex justify-between items-center max-w-1024px w-full' style={{ margin: '0 14.64%' }}>
-                    <h1 className='text-xl font-bold ml-7'>MacBook Pro</h1>
+                    <h1 className='text-xl font-semibold ml-7 font-stack'>MacBook Pro</h1>
                     <div className='text-xs flex justify-between items-center w-auto'>
                         <Link to='/' className='mx-3'>Overview</Link>
                         <Link to='/' className='mx-3'>macOS</Link>

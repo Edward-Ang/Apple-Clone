@@ -29,7 +29,6 @@ interface Product {
   }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
-    console.log(product)
     return (
         <>
             <Link key={product.id} to={`/product/${product.id}`} className="w-auto bg-gray-100 border px-4 pb-5" style={{ width: '303px', borderRadius: '18px' }}>
