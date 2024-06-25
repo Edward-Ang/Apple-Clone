@@ -6,7 +6,7 @@ const Header: React.FC = () => {
     return (
         <>
             <header className="bg-white-800 text-white p-4 h-11 flex justify-center items-center">
-                <nav className="flex justify-between items-center max-w-1024px w-auto" style={{ margin: '0 14.64%' }}>
+                <nav className="flex justify-between items-center w-auto" style={{ margin: '0 14.64%', maxWidth: '1024px' }}>
                     <div className="flex justify-between items-center w-full text-black font-semibold opacity-80 text-xs">
                         <Link to="/" className='ml-4 px-2 mx-2'>
                             <svg height="44" viewBox="0 0 14 44" width="14" xmlns="http://www.w3.org/2000/svg">
@@ -37,7 +37,7 @@ const Header: React.FC = () => {
                 </nav>
             </header>
             <div className="bg-white-800 text-black p-4 h-14 flex justify-center items-center border-b border-gray-300">
-                <div className='flex justify-between items-center max-w-1024px w-full' style={{ margin: '0 14.64%' }}>
+                <div className='flex justify-between items-center w-full' style={{ margin: '0 14.64%', maxWidth: '1024px' }}>
                     <h1 className='text-xl font-semibold ml-7 font-stack'>MacBook Pro</h1>
                     <div className='text-xs flex justify-between items-center w-auto'>
                         <Link to='/' className='mx-3'>Overview</Link>
