@@ -2,7 +2,7 @@
     "products": [
         {
             "id": 1,
-            "category": "14-inch",
+            "category": 14,
             "title": "MacBook Pro, Space Grey, 512GB Storage",
             "color": "Space Grey",
             "chip": "M3",
@@ -20,7 +20,7 @@
         },
         {
             "id": 2,
-            "category": "14-inch",
+            "category": 14,
             "title": "MacBook Pro, Space Grey, 1TB Storage",
             "color": "Space Grey",
             "chip": "M3",
@@ -38,7 +38,7 @@
         },
         {
             "id": 3,
-            "category": "14-inch",
+            "category": 14,
             "title": "MacBook Pro, Space Grey, 16GB Memory, 1TB Storage",
             "color": "Space Grey",
             "chip": "M3",
@@ -56,7 +56,7 @@
         },
         {
             "id": 4,
-            "category": "14-inch",
+            "category": 14,
             "title": "MacBook Pro, Space Black, 512GB Storage",
             "color": "Space Black",
             "chip": "M3 Pro",
@@ -74,7 +74,7 @@
         },
         {
             "id": 5,
-            "category": "14-inch",
+            "category": 14,
             "title": "MacBook Pro, Space Black, 1TB Storage",
             "color": "Space Black",
             "chip": "M3 Pro",
@@ -92,7 +92,7 @@
         },
         {
             "id": 6,
-            "category": "14-inch",
+            "category": 14,
             "title": "MacBook Pro, Space Black, 36GB Memory, 1TB Storage",
             "color": "Space Black",
             "chip": "M3 Max",
@@ -107,6 +107,78 @@
             "adapter": "96W USB-C Power Adapter",
             "price": "RM 14,799.00",
             "installment": "RM 616.63/mo. for 24 mo.*"
+        },
+        {
+            "id": 7,
+            "category": 16,
+            "title": "MacBook Pro, Space Black, 512GB Storage",
+            "color": "Space Black",
+            "chip": "M3 Pro",
+            "processor1": "12-core CPU",
+            "processor2": "18-core GPU",
+            "memory": "18GB Unified Memory",
+            "storage": "512GB SSD Storage",
+            "display": "16-inch Liquid Retina XDR display",
+            "ports": "Three Thunderbolt 4 ports, HDMI port, SDXC card slot, headphone jack, MagSafe 3 port",
+            "keyboard": "Magic Keyboard with Touch ID",
+            "trackpad": "Force Touch trackpad",
+            "adapter": "140W USB-C Power Adapter",
+            "price": "RM 11,999.00",
+            "installment": "RM 499.96/mo. for 24 mo.*"
+        },
+        {
+            "id": 8,
+            "category": 16,
+            "title": "MacBook Pro, Space Black, 36GB Memory, 512GB Storage",
+            "color": "Space Black",
+            "chip": "M3 Pro",
+            "processor1": "12-core CPU",
+            "processor2": "18-core GPU",
+            "memory": "36GB Unified Memory",
+            "storage": "512GB SSD Storage",
+            "display": "16-inch Liquid Retina XDR display",
+            "ports": "Three Thunderbolt 4 ports, HDMI port, SDXC card slot, headphone jack, MagSafe 3 port",
+            "keyboard": "Magic Keyboard with Touch ID",
+            "trackpad": "Force Touch trackpad",
+            "adapter": "140W USB-C Power Adapter",
+            "price": "RM 13,599.00",
+            "installment": "RM 566.63/mo. for 24 mo.*"
+        },
+        {
+            "id": 9,
+            "category": 16,
+            "title": "MacBook Pro, Space Black, 36GB Memory, 1TB Storage",
+            "color": "Space Black",
+            "chip": "M3 Max",
+            "processor1": "14-core CPU",
+            "processor2": "30-core GPU",
+            "memory": "36GB Unified Memory",
+            "storage": "1TB SSD Storage",
+            "display": "16-inch Liquid Retina XDR display",
+            "ports": "Three Thunderbolt 4 ports, HDMI port, SDXC card slot, headphone jack, MagSafe 3 port",
+            "keyboard": "Magic Keyboard with Touch ID",
+            "trackpad": "Force Touch trackpad",
+            "adapter": "140W USB-C Power Adapter",
+            "price": "RM 15,999.00",
+            "installment": "RM 666.63/mo. for 24 mo.*"
+        },
+        {
+            "id": 10,
+            "category": 16,
+            "title": "MacBook Pro, Space Black, 48GB Memory, 1TB Storage",
+            "color": "Space Black",
+            "chip": "M3 Max",
+            "processor1": "16-core CPU",
+            "processor2": "40-core GPU",
+            "memory": "48GB Unified Memory",
+            "storage": "1TB SSD Storage",
+            "display": "16-inch Liquid Retina XDR display",
+            "ports": "Three Thunderbolt 4 ports, HDMI port, SDXC card slot, headphone jack, MagSafe 3 port",
+            "keyboard": "Magic Keyboard with Touch ID",
+            "trackpad": "Force Touch trackpad",
+            "adapter": "140W USB-C Power Adapter",
+            "price": "RM 17,999.00",
+            "installment": "RM 749.96/mo. for 24 mo.*"
         }
     ]
 }

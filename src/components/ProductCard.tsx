@@ -1,13 +1,16 @@
-import React from "react";
-import { Link } from 'react-router-dom';
-import grey from '../assets/grey.png';
+import React, { useState } from "react";
+import { Link, useNavigate } from 'react-router-dom';
+import grey14 from '../assets/grey14.png';
+import sliver14 from '../assets/sliver14.png';
+import sliver16 from '../assets/sliver16.png';
+import black16 from '../assets/black16.png';
 import M3 from '../assets/M3.png';
 import m3pro from '../assets/m3pro.png';
 import m3max from '../assets/m3max.png';
 
 interface Product {
     id: number;
-    category: string;
+    category: number;
     title: string;
     color: string;
     chip: string;
@@ -22,30 +25,38 @@ interface Product {
     adapter: string;
     price: string;
     installment: string;
-  }
-  
-  interface ProductCardProps {
+}
+
+interface ProductCardProps {
     product: Product;
-  }
+}
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+    const [selectedImage, setSelectedImage] = useState(grey14);
+    const navigate = useNavigate();
+
+    const handleSelect = (id: string | number) => {
+        navigate(`/product/${id}`);
+    }
+
     return (
         <>
-            <Link key={product.id} to={`/product/${product.id}`} className="w-auto bg-gray-100 border px-4 pb-5" style={{ width: '303px', borderRadius: '18px' }}>
-                <img src={grey} alt={product.title} className="w-full h-64 object-cover" style={{ width: '280px' }} />
+            <div className="w-auto bg-gray-100 border px-4 pb-5" style={{ width: '303px', borderRadius: '18px' }}>
+                <img src={selectedImage} alt={product.title} className="w-full h-64 object-cover" style={{ width: '280px' }} />
                 <span className='text-xs'>{product.color}</span>
                 <ul className="flex space-x-4 pt-2">
                     <li className="flex items-center">
                         <input
                             type="radio"
-                            id="color-space-gray"
                             name="color"
+                            id={product.id.toString()}
                             value="space_gray"
+                            onClick={() => setSelectedImage(grey14)}
                             className="hidden peer"
                             checked
                         />
                         <label
-                            htmlFor="color-space-gray"
+                            htmlFor={product.id.toString()}
                             className="cursor-pointer flex flex-col items-center"
                         >
                             <img
@@ -60,13 +71,14 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                     <li className="flex items-center">
                         <input
                             type="radio"
-                            id="color-silver"
                             name="color"
+                            id={product.id.toString()}
                             value="silver"
                             className="hidden peer"
+                            onClick={() => setSelectedImage(sliver14)}
                         />
                         <label
-                            htmlFor="color-silver"
+                            htmlFor={product.id.toString()}
                             className="cursor-pointer flex flex-col items-center"
                         >
                             <img
@@ -114,7 +126,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                     <span>Get credit towards a new Mac when you trade in your eligible computer. Or recycle it for free.**</span>
                     <span className='text-blue-500 mt-1.5'>Get started</span>
                 </div>
-                <button type="submit" className="w-full button text-white button-block border rounded-lg py-2 px-4 " style={{ background: '#0071e3' }} name="proceed" value="proceed" data-autom="proceed-14inch-entry">
+                <button
+                    className="w-full button text-white button-block border rounded-lg py-2 px-4"
+                    style={{ background: '#0071e3' }}
+                    onClick={() => handleSelect(product.id)}
+                >
                     Select
                 </button>
                 <div className='pt-5'>
@@ -149,7 +165,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                         </div>
                     </div>
                 </div>
-            </Link>
+            </div>
         </>
     );
 }
