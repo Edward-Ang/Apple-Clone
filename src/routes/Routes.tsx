@@ -10,7 +10,7 @@ const RoutesConfig: React.FC = () => {
             <Header />
             <Routes>
                 <Route path="/" element={<ProductSelection />} />
-                <Route path="/product/:id" element={<ProductDetail />} />
+                <Route path="/product/:id/:color/:inch" element={<ProductDetail />} />
             </Routes>
         </Router>
     );

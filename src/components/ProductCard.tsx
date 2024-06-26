@@ -35,11 +35,13 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     const [selectedImage, setSelectedImage] = useState(() => {
         return product.category === 16 ? black16 : grey14;
     });
-    const [selectedColor, setSelectedColor] = useState("Space Grey");
+    const [selectedColor, setSelectedColor] = useState(() => {
+        return product.category === 16 ? 'Space Black' : 'Space Grey';
+    });
     const navigate = useNavigate();
 
-    const handleSelect = (id: string | number) => {
-        navigate(`/product/${id}`);
+    const handleSelect = (id: string | number, color: string, inch: number) => {
+        navigate(`/product/${id}/${color}/${inch}`);
     }
 
     return (
@@ -48,32 +50,61 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                 <img src={selectedImage} alt={product.title} className="w-full h-64 object-cover" style={{ width: '280px' }} />
                 <span className='text-xs'>{selectedColor}</span>
                 <ul className="flex space-x-4 pt-2">
-                    <li className="flex items-center">
-                        <input
-                            type="radio"
-                            name={`color-${product.id}`}
-                            id={`Space Grey-${product.id}`}
-                            value="Space Grey"
-                            onChange={() => {
-                                setSelectedImage(product.category === 16 ? black16 : grey14);
-                                setSelectedColor("Space Grey");
-                            }}
-                            className="hidden peer"
-                            checked={selectedColor === "Space Grey"}
-                        />
-                        <label
-                            htmlFor={`Space Grey-${product.id}`}
-                            className="cursor-pointer flex flex-col items-center peer-checked:border-blue-500 peer-checked:border-2 rounded-full"
-                        >
-                            <img
-                                width="32"
-                                height="32"
-                                alt="Space Grey"
-                                src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp-14-spacegray-cto-hero-202310_SW_COLOR?wid=64&amp;hei=64&amp;fmt=jpeg&amp;qlt=90&amp;.v=1697913361217"
-                                className="rounded-full border-2 border-transparent"
+                    {product.category === 16 ? (
+                        <li className="flex items-center">
+                            <input
+                                type="radio"
+                                name={`color-${product.id}`}
+                                id={`Space Black-${product.id}`}
+                                value="Space Black"
+                                onChange={() => {
+                                    setSelectedImage(product.category === 16 ? black16 : grey14);
+                                    setSelectedColor("Space Black");
+                                }}
+                                className="hidden peer"
+                                checked={selectedColor === "Space Black"}
                             />
-                        </label>
-                    </li>
+                            <label
+                                htmlFor={`Space Black-${product.id}`}
+                                className="cursor-pointer flex flex-col items-center peer-checked:border-blue-500 peer-checked:border-2 rounded-full"
+                            >
+                                <img
+                                    width="32"
+                                    height="32"
+                                    alt="Space Black"
+                                    src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp-14-spacegray-cto-hero-202310_SW_COLOR?wid=64&amp;hei=64&amp;fmt=jpeg&amp;qlt=90&amp;.v=1697913361217"
+                                    className="rounded-full border-2 border-transparent"
+                                />
+                            </label>
+                        </li>
+                    ) : (
+                        <li className="flex items-center">
+                            <input
+                                type="radio"
+                                name={`color-${product.id}`}
+                                id={`Space Grey-${product.id}`}
+                                value="Space Grey"
+                                onChange={() => {
+                                    setSelectedImage(product.category === 16 ? black16 : grey14);
+                                    setSelectedColor("Space Grey");
+                                }}
+                                className="hidden peer"
+                                checked={selectedColor === "Space Grey"}
+                            />
+                            <label
+                                htmlFor={`Space Grey-${product.id}`}
+                                className="cursor-pointer flex flex-col items-center peer-checked:border-blue-500 peer-checked:border-2 rounded-full"
+                            >
+                                <img
+                                    width="32"
+                                    height="32"
+                                    alt="Space Grey"
+                                    src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp-14-spacegray-cto-hero-202310_SW_COLOR?wid=64&amp;hei=64&amp;fmt=jpeg&amp;qlt=90&amp;.v=1697913361217"
+                                    className="rounded-full border-2 border-transparent"
+                                />
+                            </label>
+                        </li>
+                    )}
                     <li className="flex items-center">
                         <input
                             type="radio"
@@ -139,7 +170,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                 <button
                     className="w-full button text-white button-block border rounded-lg py-2 px-4"
                     style={{ background: '#0071e3' }}
-                    onClick={() => handleSelect(product.id)}
+                    onClick={() => handleSelect(product.id, selectedColor, product.category)}
                 >
                     Select
                 </button>

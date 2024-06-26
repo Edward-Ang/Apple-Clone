@@ -4,6 +4,7 @@ import ProductCard from '../components/ProductCard';
 import ProductConfigure from './ProductConfigure';
 import ProductCompare from './ProductCompare';
 import ProductCare from './ProductCare';
+import Footer from '../components/Footer';
 import data from '../assets/data.json';
 import macbbok14inch from '../assets/macbook14inch.png';
 import usbc from '../assets/usbc.png';
@@ -137,6 +138,7 @@ const ProductSelection: React.FC = () => {
             <ProductConfigure />
             <ProductCompare />
             <ProductCare />
+            <Footer />
         </>
     );
 };
