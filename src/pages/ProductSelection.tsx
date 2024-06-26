@@ -107,7 +107,7 @@ const ProductSelection: React.FC = () => {
                             </button>
                         </div>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-5 px-10">
+                    <div className="grid grid-cols-1 place-items-center md:grid-cols-2 lg:grid-cols-3 gap-5 mb-5 px-10">
                         {filteredProducts.map((product) => (
                             <ProductCard key={product.id} product={product} />
                         ))}

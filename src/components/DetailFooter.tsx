@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 interface Product {
@@ -24,15 +25,23 @@ interface ProductCardProps {
 }
 
 const DetailFooter: React.FC<ProductCardProps> = ({ product }) => {
+    const [showOptions, setShowOptions] = useState(false);
+    const [showBtn, setShowBtn] = useState(true);
+
+    const toggleShowOption = () => {
+        setShowOptions(!showOptions);
+        setShowBtn(!showBtn);
+    }
+
     return (
         <>
             <div
-                className="flex justify-center items-center border-t border-gray-300"
-                style={{ background: '#f5f5f7', maxHeight: '156px', position: 'sticky', bottom: 0, zIndex: 1 }}>
+                className="flex justify-center items-center border-b md:border-t border-gray-300 bg-[#f5f5f7] sticky top-0 bottom-auto md:w-full md:max-h-[156px] md:fixed md:top-auto md:bottom-0 z-10"
+            >
                 <div className="w-[980px] mx-auto">
-                    <div className="flex">
-                        <div className="w-1/2 flex py-5">
-                            <div className='pt-4 pr-4 text-sm flex flex-col w-1/2'>
+                    <div className='flex flex-col mx-4 md:flex md:flex-row'>
+                        <div className={`order-3 pb-5 md:order-1 md:w-1/2 md:flex md:flex-row md:py-5 ${showOptions ? '' : 'hidden'}`}>
+                            <div className='pt-4 pr-4 text-sm flex flex-col border-t border-gray-300 md:w-1/2 md:border-0'>
                                 <div className='flex justify-left items-center mb-0'>
                                     <svg className="as-svgicon-rtl-mirrored as-svgicon as-svgicon-boxtruck as-svgicon-reduced as-svgicon-boxtruckreduced" viewBox="0 0 25 25" role="img" aria-hidden="true" width="25px" height="25px"><path fill="none" d="M0 0h25v25H0z"></path><path fill="#1d1d1f" d="m23.482 12.847-2.92-3.209A1.947 1.947 0 0 0 18.985 9H17V6.495a2.5 2.5 0 0 0-2.5-2.5h-11a2.5 2.5 0 0 0-2.5 2.5v9.75a2.5 2.5 0 0 0 2.5 2.5h.548A2.746 2.746 0 0 0 6.75 21.02 2.618 2.618 0 0 0 9.422 19h6.681a2.744 2.744 0 0 0 5.347-.23h.735A1.656 1.656 0 0 0 24 16.98v-2.808a1.937 1.937 0 0 0-.518-1.325ZM8.426 18.745a1.74 1.74 0 0 1-3.352 0 1.577 1.577 0 0 1 .015-1 1.738 1.738 0 0 1 3.322 0 1.578 1.578 0 0 1 .015 1ZM9.447 18a2.726 2.726 0 0 0-5.394-.255H3.5a1.502 1.502 0 0 1-1.5-1.5v-9.75a1.502 1.502 0 0 1 1.5-1.5h11a1.502 1.502 0 0 1 1.5 1.5V18Zm10.972.77a1.738 1.738 0 0 1-3.337 0 1.573 1.573 0 0 1 0-1 1.742 1.742 0 1 1 3.337 1ZM23 16.98c0 .569-.229.79-.815.79h-.735A2.73 2.73 0 0 0 17 16.165V10h1.986a.976.976 0 0 1 .838.314l2.927 3.214a.95.95 0 0 1 .249.644Zm-1.324-3.36a.512.512 0 0 1 .174.38h-3.306a.499.499 0 0 1-.544-.528V11h1.073a.76.76 0 0 1 .594.268Z"></path></svg>
                                     <span className='ml-2'>Order today. Delivers to <Link to='/' className='text-blue-500 underline'>55188</Link> </span>
@@ -49,9 +58,12 @@ const DetailFooter: React.FC<ProductCardProps> = ({ product }) => {
                                     <Link to='/' className='text-blue-500 underline text-center w-2/3'>Apple The Exchange TRX</Link>
                                 </div>
                             </div>
+                            <div className="text-sm text-blue-500 md:hidden">
+                                <button onClick={toggleShowOption}>Hide Options</button>
+                            </div>
                         </div>
-                        <div className="w-1/2 pt-6 pb-5 flex">
-                            <div className="flex flex-col w-2/3 text-right text-2xl pb-6">
+                        <div className="order-1 md:order-2 md:w-1/2 pt-6 md:pb-5 flex justify-between">
+                            <div className="flex flex-col w-3/5 md:w-2/3 text-left text-sm md:text-right md:text-2xl pb-6">
                                 <span className="font-semibold">{product.price} or</span>
                                 <span className="font-semibold">{product.installment}</span>
                                 <Link to='/' className='text-blue-500 text-sm mt-1'>Explore monthly installment options</Link>
@@ -71,6 +83,11 @@ const DetailFooter: React.FC<ProductCardProps> = ({ product }) => {
                                 </svg>
                             </div>
                         </div>
+                        {showBtn && (
+                            <div className="order-2 pb-5 text-sm text-blue-500 md:hidden">
+                                <button onClick={toggleShowOption}>Show Options</button>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>

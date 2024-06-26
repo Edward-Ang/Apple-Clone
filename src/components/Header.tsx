@@ -5,14 +5,19 @@ import '../App.css';
 
 const Header: React.FC = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
+    const [subDropdownOpen, setSubDropdownOpen] = useState(false);
 
     const toggleDropdown = () => {
         setDropdownOpen(!dropdownOpen);
     };
 
+    const toggleSubDropdown = () => {
+        setSubDropdownOpen(!subDropdownOpen);
+    };
+
     return (
         <>
-            <header className="bg-white-800 text-white p-4 h-11 flex justify-center items-center">
+            <header className="bg-white-800 text-white p-4 h-11 flex justify-center items-center w-full">
                 <nav className="flex justify-between items-center w-full mx-auto" style={{ maxWidth: '1024px' }}>
                     <div className="flex justify-between items-center w-full text-black font-semibold opacity-80 text-xs">
                         <Link to="/" className='ml-4 px-2 mx-2'>
@@ -45,13 +50,13 @@ const Header: React.FC = () => {
                             </Link>
                             <button className='ml-4 px-2 mx-2 lg:hidden' onClick={toggleDropdown}>
                                 <svg width="18" height="18" viewBox="0 0 18 18">
-                                    <polyline id="globalnav-menutrigger-bread-bottom" className="globalnav-menutrigger-bread globalnav-menutrigger-bread-bottom" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" points="2 12, 16 12">
+                                    <polyline id="globalnav-menutrigger-bread-bottom" className="globalnav-menutrigger-bread globalnav-menutrigger-bread-bottom" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" points="2 12, 16 12">
                                         <animate id="globalnav-anim-menutrigger-bread-bottom-open" attributeName="points" keyTimes="0;0.5;1" dur="0.24s" begin="indefinite" fill="freeze" calcMode="spline" keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1" values=" 2 12, 16 12; 2 9, 16 9; 3.5 15, 15 3.5">
                                         </animate>
                                         <animate id="globalnav-anim-menutrigger-bread-bottom-close" attributeName="points" keyTimes="0;0.5;1" dur="0.24s" begin="indefinite" fill="freeze" calcMode="spline" keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1" values=" 3.5 15, 15 3.5; 2 9, 16 9; 2 12, 16 12">
                                         </animate>
                                     </polyline>
-                                    <polyline id="globalnav-menutrigger-bread-top" className="globalnav-menutrigger-bread globalnav-menutrigger-bread-top" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" points="2 5, 16 5">
+                                    <polyline id="globalnav-menutrigger-bread-top" className="globalnav-menutrigger-bread globalnav-menutrigger-bread-top" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" points="2 5, 16 5">
                                         <animate id="globalnav-anim-menutrigger-bread-top-open" attributeName="points" keyTimes="0;0.5;1" dur="0.24s" begin="indefinite" fill="freeze" calcMode="spline" keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1" values=" 2 5, 16 5; 2 9, 16 9; 3.5 3.5, 15 15">
                                         </animate>
                                         <animate id="globalnav-anim-menutrigger-bread-top-close" attributeName="points" keyTimes="0;0.5;1" dur="0.24s" begin="indefinite" fill="freeze" calcMode="spline" keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1" values=" 3.5 3.5, 15 15; 2 9, 16 9; 2 5, 16 5">
@@ -64,7 +69,7 @@ const Header: React.FC = () => {
                 </nav>
             </header>
             {dropdownOpen && (
-                <div className="absolute right-0 mt-2 w-full bg-white shadow-lg z-10 rounded-md py-2 text-2xl font-medium">
+                <div className="absolute right-0 w-full bg-white shadow-lg z-20 rounded-md py-4 text-2xl font-medium">
                     <Link to="/" className="block px-12 py-2">Store</Link>
                     <Link to="/" className="block px-12 py-2">Mac</Link>
                     <Link to="/" className="block px-12 py-2">iPad</Link>
@@ -78,15 +83,40 @@ const Header: React.FC = () => {
                 </div>
             )}
             <div className="bg-white-800 text-black p-4 h-14 flex justify-center items-center border-b border-gray-300">
-                <div className='flex justify-between items-center w-full' style={{ margin: '0 14.64%', maxWidth: '1024px' }}>
+                <div className='flex justify-between items-center w-full mx-auto' style={{ maxWidth: '1024px' }}>
                     <h1 className='text-xl font-semibold ml-7 font-stack'>MacBook Pro</h1>
-                    <div className='text-xs flex justify-between items-center w-auto'>
+                    <div className='hidden lg:text-xs lg:flex lg:justify-between lg:items-center lg:w-auto'>
                         <Link to='/' className='mx-3'>Overview</Link>
                         <Link to='/' className='mx-3'>macOS</Link>
                         <Link to='/' className='mx-3'>Compare</Link>
                     </div>
+                    <button className='ml-4 px-2 mx-2 lg:hidden' onClick={toggleSubDropdown}>
+                        <svg width={15} height={15} viewBox="0 0 16 9" data-chevron-icon="" xmlns="http://www.w3.org/2000/svg">
+                            <polyline shapeRendering="geometricPrecision" data-chevron-icon-shape="" stroke="currentColor" strokeLinecap="round" vectorEffect="non-scaling-stroke" strokeLinejoin="round" fill="none" fillRule="evenodd" points="15.265 .835 8 8.167 .735 .835">
+                                <animate data-chevron-animate="expand" attributeName="points" values="15.265 .835 8 8.167 .735 .835;
+					15.25 4.5 8 4.5 .75 4.5;
+					15.265 8.165 8 .835 .735 8.165" dur="320ms" begin="indefinite" fill="freeze" keyTimes="0;
+					0.5;
+					1" calcMode="spline" keySplines="0.12, 0, 0.38, 0;
+						0.2, 1, 0.68, 1"></animate>
+                                <animate data-chevron-animate="collapse" attributeName="points" values="15.265 8.165 8 .835 .735 8.165;
+					15.25 4.5 8 4.5 .75 4.5;
+					15.265 .835 8 8.167 .735 .835" dur="320ms" begin="indefinite" fill="freeze" keyTimes="0;
+					0.5;
+					1" calcMode="spline" keySplines="0.2, 0, 0.68, 0;
+						0.2, 1, 0.68, 1"></animate>
+                            </polyline>
+                        </svg>
+                    </button>
                 </div>
             </div>
+            {subDropdownOpen && (
+                <div className="absolute right-0 w-full bg-white shadow-lg z-20 rounded-md py-2 text-sm font-medium">
+                    <Link to="/" className="block px-12 py-2">Overview</Link>
+                    <Link to="/" className="block px-12 py-2">macOS</Link>
+                    <Link to="/" className="block px-12 py-2">Compare</Link>
+                </div>
+            )}
         </>
     );
 };

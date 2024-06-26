@@ -52,9 +52,10 @@ const ProductDetail: React.FC = () => {
   return (
     <>
       <Banner content='Pay 0% interest for up to 24 months. Terms apply.◊◊' />
-      <div className="w-[980px] mx-auto mt-14 flex">
-        <div className='w-1/2 pt-11'>
-          <div className='w-full mr-14 mb-12 flex flex-col' style={{ maxWidth: '430px', position: 'sticky', top: 0, zIndex: 1 }}>
+      <DetailFooter product={product} />
+      <div className="block mx-6 md:w-[980px] md:mx-auto md:mt-14 md:flex">
+        <div className='md:w-1/2 md:pt-11'>
+          <div className='w-full mr-14 mb-12 flex flex-col justify-center items-center md:w-[430px]' style={{ position: 'sticky', top: 0, zIndex: 1 }}>
             <img width={772} height={465} src={selectedImage} alt={product.title} className="w-full object-cover mb-4" style={{ height: '270px', width: '420px' }} />
             <div className='pt-5 pb-8 flex justify-center items-center'>
               <button className='text-sm text-blue-500'>View gallery</button>
@@ -92,8 +93,8 @@ const ProductDetail: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className='w-1/2'>
-          <p className="font-semibold mb-3 font-stack" style={{ fontSize: '36px', lineHeight: '44px' }}>
+        <div className='md:w-1/2'>
+          <p className="font-semibold mb-3 font-stack text-2xl lg:text-4xl" style={{ lineHeight: '44px' }}>
             Customise your {product.category}-inch MacBook Pro - {product.color}
           </p>
           <div className='mb-6'>
@@ -210,13 +211,13 @@ const ProductDetail: React.FC = () => {
                     </div>
                     <div className='flex justify-center items-center'>
                       <svg className="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                       </svg>
                     </div>
                   </div>
                 </button>
                 {show && (
-                  <div id="dropdown-menu" className="absolute z-10 w-full mt-1 bg-white shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm">
+                  <div id="dropdown-menu" className="absolute z-10 w-full mt-1 bg-white shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none md:text-sm">
                     <div className="py-2 px-4 bg-blue-500 text-white">
                       Backlit Magic Keyboard with Touch ID - US English
                     </div>
@@ -257,7 +258,6 @@ const ProductDetail: React.FC = () => {
         </div>
       </div>
       <Footer />
-      <DetailFooter product={product} />
     </>
   );
 };
