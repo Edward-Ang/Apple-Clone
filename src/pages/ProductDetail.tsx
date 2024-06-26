@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import Banner from '../components/Banner';
 import DetailFooter from '../components/DetailFooter';
+import Footer from '../components/Footer';
 import data from '../assets/data.json';
 import useStore from '../state/store';
 import grey14 from '../assets/grey14.png';
@@ -49,10 +51,11 @@ const ProductDetail: React.FC = () => {
 
   return (
     <>
+      <Banner content='Pay 0% interest for up to 24 months. Terms apply.◊◊' />
       <div className="w-[980px] mx-auto mt-14 flex">
         <div className='w-1/2 pt-11'>
           <div className='w-full mr-14 mb-12 flex flex-col' style={{ maxWidth: '430px', position: 'sticky', top: 0, zIndex: 1 }}>
-            <img width={772} height={466} src={selectedImage} alt={product.title} className="w-full h-64 object-cover mb-4" />
+            <img width={772} height={465} src={selectedImage} alt={product.title} className="w-full object-cover mb-4" style={{ height: '270px', width: '420px' }} />
             <div className='pt-5 pb-8 flex justify-center items-center'>
               <button className='text-sm text-blue-500'>View gallery</button>
             </div>
@@ -90,7 +93,7 @@ const ProductDetail: React.FC = () => {
           </div>
         </div>
         <div className='w-1/2'>
-          <p className="font-medium mb-3 font-stack" style={{ fontSize: '40px', lineHeight: '44px' }}>
+          <p className="font-semibold mb-3 font-stack" style={{ fontSize: '36px', lineHeight: '44px' }}>
             Customise your {product.category}-inch MacBook Pro - {product.color}
           </p>
           <div className='mb-6'>
@@ -253,6 +256,7 @@ const ProductDetail: React.FC = () => {
           </div>
         </div>
       </div>
+      <Footer />
       <DetailFooter product={product} />
     </>
   );

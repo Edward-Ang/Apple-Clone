@@ -24,12 +24,12 @@ const ProductConfigure: React.FC = () => {
         <>
             <div className="pt-12 pb-11 flex flex-col justify-center items-center" style={{ margin: '0 14.64%' }}>
                 <div className='pb-14 flex flex-col justify-center items-center '>
-                    <h2 className="text-2xl font-semibold font-stack">What to consider when choosing your MacBook Pro.</h2>
+                    <h2 className="text-2xl font-semibold text-center font-stack">What to consider when choosing your MacBook Pro.</h2>
                     <p className='mt-3 text-lg'>Configure your laptop on the next step.</p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 px-10 w-full">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:px-10 w-full">
                     {data.chips.map((chip, index) => (
-                        <div key={index} className='flex flex-col px-5'>
+                        <div key={index} className='flex flex-col sm:px-5'>
                             <div className='flex items-center' style={{maxWidth: '36px'}}>
                                 <img src={getImagePath(chip.path)} alt={chip.name} />
                             </div>

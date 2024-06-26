@@ -1,0 +1,70 @@
+{
+    "Shop_and_Learn": [
+        "Store",
+        "Mac",
+        "iPad",
+        "iPhone",
+        "Watch",
+        "AirPods",
+        "TV & Home",
+        "AirTag",
+        "Accessories",
+        "Gift Cards"
+    ],
+    "Apple_Wallet": [
+        "Wallet",
+        "Apple Pay"
+    ],
+    "Account": [
+        "Manage Your Apple ID",
+        "Apple Store Account",
+        "iCloud.com"
+    ],
+    "Entertainment": [
+        "Apple One",
+        "Apple TV+",
+        "Apple Music",
+        "Apple Arcade",
+        "Apple Fitness+",
+        "Apple Podcasts",
+        "Apple Books",
+        "App Store"
+    ],
+    "Apple_Store": [
+        "Find a Store",
+        "Today at Apple",
+        "Apple Store App",
+        "Financing",
+        "Apple Trade In",
+        "Order Status",
+        "Shopping Help"
+    ],
+    "For_Business": [
+        "Apple and Business",
+        "Shop for Business"
+    ],
+    "For_Education": [
+        "Apple and Education",
+        "Shop for University"
+    ],
+    "For_Healthcare": [
+        "Apple in Healthcare",
+        "Health on Apple Watch"
+    ],
+    "Apple_Values": [
+        "Accessibility",
+        "Education",
+        "Environment",
+        "Privacy",
+        "Supply Chain"
+    ],
+    "About_Apple": [
+        "Newsroom",
+        "Apple Leadership",
+        "Career Opportunities",
+        "Investors",
+        "Ethics & Compliance",
+        "Events",
+        "Contact Apple"
+    ]
+}

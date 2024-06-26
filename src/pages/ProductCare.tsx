@@ -4,7 +4,7 @@ import applecare from '../assets/applecare.png';
 const ProductCare: React.FC = () => {
     return (
         <>
-            <div className="" style={{ margin: '0 15.45%', padding: '0 74px' }}>
+            <div className="sm:px-18" style={{ margin: '0 15.45%' }}>
                 <div className="py-20 flex flex-col justify-center items-center">
                     <div className='pb-16' style={{ maxWidth: '150px' }} >
                         <img src={applecare} width={304} height={304} alt="care" />
