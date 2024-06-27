@@ -4,7 +4,7 @@ import grey14 from '../assets/grey14.png';
 import sliver14 from '../assets/sliver14.png';
 import sliver16 from '../assets/sliver16.png';
 import black16 from '../assets/black16.png';
-import M3 from '../assets/M3.png';
+import M3 from '../assets/m3.png';
 import m3pro from '../assets/m3pro.png';
 import m3max from '../assets/m3max.png';
 

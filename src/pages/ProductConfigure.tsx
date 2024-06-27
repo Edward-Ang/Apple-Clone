@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'; 
 import data from '../assets/chip.json';
-import M3 from '../assets/M3.png';
+import M3 from '../assets/m3.png';
 import m3pro from '../assets/m3pro.png';
 import m3max from '../assets/m3max.png';
 import memory from '../assets/memory.png';
