@@ -111,7 +111,7 @@ const Header: React.FC = () => {
                 </div>
             </div>
             {subDropdownOpen && (
-                <div className="absolute right-0 w-full bg-white shadow-lg z-20 rounded-md py-2 text-sm font-medium">
+                <div className="animate-slideDown absolute right-0 w-full bg-white shadow-lg z-20 rounded-md py-2 text-sm font-medium">
                     <Link to="/" className="block px-12 py-2">Overview</Link>
                     <Link to="/" className="block px-12 py-2">macOS</Link>
                     <Link to="/" className="block px-12 py-2">Compare</Link>
