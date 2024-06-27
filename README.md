@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+### Project Link: https://apple-clone-topaz-mu.vercel.app/
+
 ### Project Preview:
 ![image](https://github.com/Edward-Ang/Apple-Clone/assets/64727838/2b5ff1bb-883d-4a05-8b2d-05d68a0986ab)
 ![image](https://github.com/Edward-Ang/Apple-Clone/assets/64727838/06c22d27-12b6-4cf5-99e2-e40271a53678)
